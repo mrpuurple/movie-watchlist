@@ -1,12 +1,12 @@
 # movie-watchlist
 
-> A Simple Python Flask app for keeping track off movies you watched
+## A Simple Python Flask app for keeping track off movies you watched
 
 ---
 
 ![screenshot](./pics/screenshot.png?raw=true "Screenshot picture of the App")
 
-## Docker local testing
+### Docker local testing
 
 > Run mongodb container
 
@@ -28,7 +28,7 @@ MONGODB_URI="mongodb://${MY_IP}:27017/movies"
 docker run --env MONGODB_URI=${MONGODB_URI} -p 8080:80 --rm --name movietime movie-library:1.0.0
 ```
 
-## Docker build for different architectures using `buildx` on Apple Silicon M1 chip
+### Docker build for different architectures using `buildx` on Apple Silicon M1 chip
 
 > ERROR: multiple platforms feature is currently not supported for docker driver. Please switch to a different driver (eg. "docker buildx create --use")
 
@@ -42,9 +42,9 @@ docker buildx create --use
 docker buildx build --platform  linux/amd64,linux/arm64 --push -t <your repo>/movie-library:1.0.0 .
 ```
 
-## Deploy to Kubernetes
+### Deploy to Kubernetes
 
-### [mongodb helm chart](https://artifacthub.io/packages/helm/bitnami/mongodb)
+#### [mongodb helm chart](https://artifacthub.io/packages/helm/bitnami/mongodb)
 
 ```sh
 helm repo add bitnami https://charts.bitnami.com/bitnami
