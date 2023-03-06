@@ -2,6 +2,10 @@
 
 > A Simple Python Flask app for keeping track off movies you watched
 
+---
+
+![screenshot](./pics/screenshot.png?raw=true "Screenshot picture of the App")
+
 ## Docker local testing
 
 > Run mongodb container
