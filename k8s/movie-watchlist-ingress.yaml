@@ -1,0 +1,26 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    ingress.kubernetes.io/rewrite-target: /
+  labels:
+    app: movietime
+    app.kubernetes.io/name: movietime
+  name: movietime
+  namespace: default
+spec:
+  ingressClassName: internal-ingress
+  rules:
+  - host: <your host>
+    http:
+      paths:
+      - backend:
+          service:
+            name: movietime
+            port:
+              number: 8080
+        path: /
+        pathType: ImplementationSpecific
+...
